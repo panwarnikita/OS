@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../api";
+import "./register.css";
 import { Link } from "react-router-dom";
 
 export default function Register({ onLogin }) {
@@ -18,17 +19,39 @@ export default function Register({ onLogin }) {
     }
   }
 
-  return (
-    <div className="container" style={{ maxWidth: 360, margin: "80px auto" }}>
+return (
+  <div className="register-wrapper">
+    <div className="register-box">
       <h2>Register</h2>
       <form onSubmit={submit}>
-        <input placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} />
-        <input placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-        <input placeholder="Password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
+        <input
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          placeholder="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <button type="submit">Create</button>
       </form>
-      {msg && <p>{msg}</p>}
-      <p>Have account? <Link to="/login">Login</Link></p>
+      {msg && <p className="error">{msg}</p>}
+      <p>
+        Have account? <Link to="/login">Login</Link>
+      </p>
     </div>
-  );
+  </div>
+);
+
 }
+
+
+
+
