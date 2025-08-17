@@ -4,6 +4,8 @@ import api, { setAuthToken } from "./api";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Desktop from "./pages/Desktop.jsx";
+import axios from "axios";
+
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
